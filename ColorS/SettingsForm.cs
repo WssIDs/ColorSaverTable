@@ -11,9 +11,9 @@ using System.IO;
 
 namespace ColorS
 {
-    public partial class settingForm : Form
+    public partial class SettingsForm : Form
     {
-        public settingForm()
+        public SettingsForm()
         {
             InitializeComponent();
         }

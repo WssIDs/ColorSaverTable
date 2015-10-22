@@ -1,6 +1,6 @@
 ﻿namespace ColorS
 {
-    partial class settingForm
+    partial class SettingsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -80,6 +80,7 @@
             // 
             // workpath_textbox
             // 
+            this.workpath_textbox.Enabled = false;
             this.workpath_textbox.Location = new System.Drawing.Point(90, 12);
             this.workpath_textbox.Name = "workpath_textbox";
             this.workpath_textbox.Size = new System.Drawing.Size(419, 20);
@@ -106,7 +107,7 @@
             this.error_label.Text = "no files to load";
             this.error_label.Visible = false;
             // 
-            // settingForm
+            // SettingsForm
             // 
             this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,8 +123,8 @@
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "settingForm";
-            this.Text = "SettingsForm";
+            this.Name = "SettingsForm";
+            this.Text = "Settings";
             this.Load += new System.EventHandler(this.SettingsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
