@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -39,6 +40,10 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.save_button = new System.Windows.Forms.Button();
+            this.get_data_button = new System.Windows.Forms.Button();
+            this.findfile_timer = new System.Windows.Forms.Timer(this.components);
+            this.generatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generateRandomColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -73,7 +78,6 @@
             this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Color Table";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // menuStrip1
             // 
@@ -92,7 +96,7 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
@@ -104,15 +108,16 @@
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.preferenceToolStripMenuItem});
+            this.preferenceToolStripMenuItem,
+            this.generatorToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // preferenceToolStripMenuItem
             // 
             this.preferenceToolStripMenuItem.Name = "preferenceToolStripMenuItem";
-            this.preferenceToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.preferenceToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.preferenceToolStripMenuItem.Text = "Preference";
             this.preferenceToolStripMenuItem.Click += new System.EventHandler(this.preferenceToolStripMenuItem_Click);
             // 
@@ -122,19 +127,19 @@
             this.aboutToolStripMenuItem,
             this.helpToolStripMenuItem1});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // helpToolStripMenuItem1
             // 
             this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(103, 22);
             this.helpToolStripMenuItem1.Text = "Help";
             // 
             // save_button
@@ -147,11 +152,42 @@
             this.save_button.UseVisualStyleBackColor = true;
             this.save_button.Click += new System.EventHandler(this.save_button_Click);
             // 
+            // get_data_button
+            // 
+            this.get_data_button.Location = new System.Drawing.Point(634, 324);
+            this.get_data_button.Name = "get_data_button";
+            this.get_data_button.Size = new System.Drawing.Size(75, 23);
+            this.get_data_button.TabIndex = 4;
+            this.get_data_button.Text = "GetData";
+            this.get_data_button.UseVisualStyleBackColor = true;
+            this.get_data_button.Click += new System.EventHandler(this.get_data_button_Click);
+            // 
+            // findfile_timer
+            // 
+            this.findfile_timer.Enabled = true;
+            this.findfile_timer.Tick += new System.EventHandler(this.findfile_timer_Tick);
+            // 
+            // generatorToolStripMenuItem
+            // 
+            this.generatorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.generateRandomColorToolStripMenuItem});
+            this.generatorToolStripMenuItem.Name = "generatorToolStripMenuItem";
+            this.generatorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.generatorToolStripMenuItem.Text = "Generator";
+            // 
+            // generateRandomColorToolStripMenuItem
+            // 
+            this.generateRandomColorToolStripMenuItem.Name = "generateRandomColorToolStripMenuItem";
+            this.generateRandomColorToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.generateRandomColorToolStripMenuItem.Text = "GenerateRandomColor";
+            this.generateRandomColorToolStripMenuItem.Click += new System.EventHandler(this.generateRandomColorToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 359);
+            this.Controls.Add(this.get_data_button);
             this.Controls.Add(this.save_button);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
@@ -183,6 +219,10 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem1;
         private System.Windows.Forms.Button save_button;
+        private System.Windows.Forms.Button get_data_button;
+        private System.Windows.Forms.Timer findfile_timer;
+        private System.Windows.Forms.ToolStripMenuItem generatorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generateRandomColorToolStripMenuItem;
     }
 }
 

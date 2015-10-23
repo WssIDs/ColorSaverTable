@@ -6,7 +6,7 @@
       <Value Profile="(Default)">D:\</Value>
     </Setting>
     <Setting Name="ColorTableFileName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">color_table.txt</Value>
+      <Value Profile="(Default)">color_table.xml</Value>
     </Setting>
   </Settings>
 </SettingsFile>

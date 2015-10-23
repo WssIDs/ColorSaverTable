@@ -21,7 +21,7 @@ namespace ColorS
         private void SettingsForm_Load(object sender, EventArgs e)
         {
 
-            if (File.Exists(Properties.Settings.Default.WorkPath + Properties.Settings.Default.ColorTableFileName))
+            if (File.Exists(Properties.Settings.Default.WorkPath +"\\"+ Properties.Settings.Default.ColorTableFileName))
             {
                 error_label.ForeColor = Color.LightGreen;
                 error_label.Text = Properties.Settings.Default.ColorTableFileName + " is ready";
@@ -74,7 +74,7 @@ namespace ColorS
                 workpath_textbox.Text = fdlg.SelectedPath;
 
 
-                if (File.Exists(fdlg.SelectedPath + Properties.Settings.Default.ColorTableFileName))
+                if (File.Exists(fdlg.SelectedPath +"\\"+ Properties.Settings.Default.ColorTableFileName))
                 {
                     error_label.ForeColor = Color.LightGreen;
                     error_label.Text = Properties.Settings.Default.ColorTableFileName + " is ready";

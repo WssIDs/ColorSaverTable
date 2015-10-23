@@ -37,7 +37,7 @@ namespace ColorS.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("color_table.txt")]
+        [global::System.Configuration.DefaultSettingValueAttribute("color_table.xml")]
         public string ColorTableFileName {
             get {
                 return ((string)(this["ColorTableFileName"]));
