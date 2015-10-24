@@ -21,11 +21,12 @@ namespace ColorS
             InitializeComponent();
         }
 
+        List<string> UsedColors = new List<string>();
+
         string pathToXml = Properties.Settings.Default.WorkPath + "\\" + Properties.Settings.Default.ColorTableFileName;
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
             dataGridView1.RowHeadersWidth = 50;
             dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.AllowUserToOrderColumns = false;
@@ -42,19 +43,30 @@ namespace ColorS
                 dataGridView1.Rows[i].HeaderCell.Value = (i + 1).ToString();
             }
 
-
-
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 row.Height = 35;
             }
         }
 
-        private Color CreateRandomColor()
+        private Color RandColor()
         {
-            Random randonGen = new Random();
-            Color randomColor = Color.FromArgb(randonGen.Next(255), randonGen.Next(255), randonGen.Next(255));
-            return randomColor;
+            Random x = new Random();
+            int r, g, b;
+            Color myRgbColor = new Color();
+            while (true)
+            {
+                r = x.Next(0, 255);
+                g = x.Next(0, 255);
+                b = x.Next(0, 255);
+                if (!UsedColors.Contains(r + "," + g + "," + b))
+                {
+                    UsedColors.Add(r + "," + g + "," + b);
+                    break;
+                }
+            }
+            myRgbColor = Color.FromArgb(r, g, b);
+            return myRgbColor;
         }
 
         private void preferenceToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,6 +77,12 @@ namespace ColorS
         }
 
         private void save_button_Click(object sender, EventArgs e)
+        {
+            Save_Data();
+
+        }
+
+        private void Save_Data()
         {
 
             XmlTextWriter textWritter = new XmlTextWriter(pathToXml, Encoding.UTF8);
@@ -80,13 +98,13 @@ namespace ColorS
 
             int n = 0;
 
-            for (int i = 0; i < dataGridView1.ColumnCount; i++)
+            for (int j = 0; j < dataGridView1.RowCount; j++)
             {
-                for (int j = 0; j < dataGridView1.RowCount; j++)
+                for (int i = 0; i < dataGridView1.ColumnCount; i++)
                 {
                     //Вывод в OutPutWindow
-                    Trace.WriteLine(n+1); 
-                               
+                    Trace.WriteLine(n + 1);
+
                     // создаем новый элемент color
                     XmlElement colorElem = xDoc.CreateElement("color");
                     // создаем атрибут index
@@ -137,10 +155,10 @@ namespace ColorS
 
                     n = n + 1;
                 }
-                
-            }
 
+            }
         }
+
 
         private void findfile_timer_Tick(object sender, EventArgs e)
         {
@@ -156,8 +174,35 @@ namespace ColorS
 
         private void get_data_button_Click(object sender, EventArgs e)
         {
+            Get_Data();
+            
+        }
+
+        private void generateRandomColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+                for (int i = 0; i < 14; i++)
+                {
+                    for (int j = 0; j < 7; j++)
+                    {
+                        dataGridView1[i, j].Style.BackColor = RandColor();
+                    }
+                }
+        }
+
+
+        private void Get_Data()
+        {
 
             List<ColorTable> colorTable = new List<ColorTable>();
+
+
+
+            int Red = 0;
+            int Green = 0;
+            int Blue = 0;
+            int Alpha = 0;
+
+
 
             XmlDocument xDoc = new XmlDocument();
             xDoc.Load(pathToXml);
@@ -166,83 +211,139 @@ namespace ColorS
             // обход всех узлов в корневом элементе
             foreach (XmlNode xnode in xRoot)
             {
+                ColorTable clrTable = new ColorTable();
+
                 // получаем атрибут name
                 if (xnode.Attributes.Count > 0)
                 {
                     XmlNode attr = xnode.Attributes.GetNamedItem("index");
-                    if (attr != null)
-                        Trace.WriteLine(attr.Value);
+                    //if (attr != null)
+                    //    Trace.WriteLine(attr.Value);
                 }
                 // обходим все дочерние узлы элемента user
                 foreach (XmlNode childnode in xnode.ChildNodes)
                 {
 
-                    ColorTable clrTable = new ColorTable();
-                    int Red = 0;
-                    int Green = 0;
-                    int Blue = 0;
-                    int Alpha = 0;
+
+
 
                     if (childnode.Name == "ColumnIndex")
                     {
-                        Trace.WriteLine("Column: "+ childnode.InnerText);
+                        //Trace.WriteLine("Column: "+ childnode.InnerText);
                         clrTable.Column = Convert.ToInt32(childnode.InnerText);
                     }
 
                     if (childnode.Name == "RowIndex")
                     {
-                        Trace.WriteLine("Row: "+ childnode.InnerText);
+                        //Trace.WriteLine("Row: "+ childnode.InnerText);
                         clrTable.Row = Convert.ToInt32(childnode.InnerText);
                     }
 
                     if (childnode.Name == "R")
                     {
-                        Trace.WriteLine("R= "+ childnode.InnerText);
+                        //Trace.WriteLine("R= "+ childnode.InnerText);
                         Red = Convert.ToInt32(childnode.InnerText);
                     }
 
                     if (childnode.Name == "G")
                     {
-                        Trace.WriteLine("G= "+ childnode.InnerText);
+                        //Trace.WriteLine("G= "+ childnode.InnerText);
                         Green = Convert.ToInt32(childnode.InnerText);
                     }
 
                     if (childnode.Name == "B")
                     {
-                        Trace.WriteLine("B= "+ childnode.InnerText);
+                        // Trace.WriteLine("B= "+ childnode.InnerText);
                         Blue = Convert.ToInt32(childnode.InnerText);
                     }
 
                     if (childnode.Name == "A")
                     {
-                        Trace.WriteLine("A= "+ childnode.InnerText);
+                        //Trace.WriteLine("A= "+ childnode.InnerText);
                         Alpha = Convert.ToInt32(childnode.InnerText);
                     }
 
-                    clrTable.color =Color.FromArgb(Red, Green, Blue);
-
-
-                    colorTable.Add(clrTable);
                 }
-            }
 
+                clrTable.color = Color.FromArgb(Alpha, Red, Green, Blue);
+                colorTable.Add(clrTable);
+            }
 
             for (int i = 0; i < colorTable.Count; i++)
             {
-                Trace.WriteLine(colorTable[i].color.ToString());
+                dataGridView1[colorTable[i].Column, colorTable[i].Row].Style.BackColor = colorTable[i].color;
             }
         }
 
-        private void generateRandomColorToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            label2.Text = e.ColumnIndex + ":" + e.RowIndex;
+
+            dataGridView1.Refresh();
+        }
+
+
+        private void ClearDataGridView()
         {
             for (int i = 0; i < 14; i++)
             {
                 for (int j = 0; j < 7; j++)
                 {
-                    dataGridView1[i, j].Style.BackColor = CreateRandomColor();
-                    Trace.WriteLine((dataGridView1[i, j].Style.BackColor).ToString());
+                    dataGridView1[i, j].Style.BackColor = Color.White;
                 }
             }
+        }
+
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ColorDialog cdlg = new ColorDialog();
+
+            if (e.RowIndex >= 1)
+            {
+                cdlg.Color = dataGridView1[e.ColumnIndex, e.RowIndex-1].Style.BackColor;
+            }
+
+            else
+            {
+                cdlg.Color = dataGridView1[e.ColumnIndex, e.RowIndex].Style.BackColor;
+            }
+
+                if (cdlg.ShowDialog() == DialogResult.OK)
+                {
+                    dataGridView1[e.ColumnIndex, e.RowIndex].Style.BackColor = cdlg.Color;
+                }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ClearDataGridView();
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Get_Data();
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Save_Data();
+        }
+
+        private void clearToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            ClearDataGridView();
+        }
+
+        private void dataGridView1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_KeyUp(object sender, KeyEventArgs e)
+        {
         }
     }
 }
