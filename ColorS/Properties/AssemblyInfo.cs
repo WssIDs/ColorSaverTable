@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ColorS")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Color Table Generator")]
+[assembly: AssemblyDescription("Generator Color Table for Riders Project (based on Unreal Engine 4).")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ColorS")]
+[assembly: AssemblyCompany("WssIDsGames")]
+[assembly: AssemblyProduct("Color Table Generator")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

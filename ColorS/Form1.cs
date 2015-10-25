@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Xml;
+using System.Reflection;
 
 using System.Diagnostics;
 
@@ -165,10 +166,12 @@ namespace ColorS
             if (File.Exists(Properties.Settings.Default.WorkPath + "\\" + Properties.Settings.Default.ColorTableFileName))
             {
                 get_data_button.Enabled = true;
+                loadDataToolStripMenuItem.Enabled = true;
             }
             else
             {
                 get_data_button.Enabled = false;
+                loadDataToolStripMenuItem.Enabled = false;
             }
         }
 
@@ -276,6 +279,91 @@ namespace ColorS
         }
 
 
+        private void Get_Data_FromPreset(string path)
+        {
+
+            List<ColorTable> colorTable = new List<ColorTable>();
+
+
+
+            int Red = 0;
+            int Green = 0;
+            int Blue = 0;
+            int Alpha = 0;
+
+
+
+            XmlDocument xDoc = new XmlDocument();
+            xDoc.Load(path);
+            // получим корневой элемент
+            XmlElement xRoot = xDoc.DocumentElement;
+            // обход всех узлов в корневом элементе
+            foreach (XmlNode xnode in xRoot)
+            {
+                ColorTable clrTable = new ColorTable();
+
+                // получаем атрибут name
+                if (xnode.Attributes.Count > 0)
+                {
+                    XmlNode attr = xnode.Attributes.GetNamedItem("index");
+                    //if (attr != null)
+                    //    Trace.WriteLine(attr.Value);
+                }
+                // обходим все дочерние узлы элемента user
+                foreach (XmlNode childnode in xnode.ChildNodes)
+                {
+
+
+
+
+                    if (childnode.Name == "ColumnIndex")
+                    {
+                        //Trace.WriteLine("Column: "+ childnode.InnerText);
+                        clrTable.Column = Convert.ToInt32(childnode.InnerText);
+                    }
+
+                    if (childnode.Name == "RowIndex")
+                    {
+                        //Trace.WriteLine("Row: "+ childnode.InnerText);
+                        clrTable.Row = Convert.ToInt32(childnode.InnerText);
+                    }
+
+                    if (childnode.Name == "R")
+                    {
+                        //Trace.WriteLine("R= "+ childnode.InnerText);
+                        Red = Convert.ToInt32(childnode.InnerText);
+                    }
+
+                    if (childnode.Name == "G")
+                    {
+                        //Trace.WriteLine("G= "+ childnode.InnerText);
+                        Green = Convert.ToInt32(childnode.InnerText);
+                    }
+
+                    if (childnode.Name == "B")
+                    {
+                        // Trace.WriteLine("B= "+ childnode.InnerText);
+                        Blue = Convert.ToInt32(childnode.InnerText);
+                    }
+
+                    if (childnode.Name == "A")
+                    {
+                        //Trace.WriteLine("A= "+ childnode.InnerText);
+                        Alpha = Convert.ToInt32(childnode.InnerText);
+                    }
+
+                }
+
+                clrTable.color = Color.FromArgb(Alpha, Red, Green, Blue);
+                colorTable.Add(clrTable);
+            }
+
+            for (int i = 0; i < colorTable.Count; i++)
+            {
+                dataGridView1[colorTable[i].Column, colorTable[i].Row].Style.BackColor = colorTable[i].color;
+            }
+        }
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             label2.Text = e.ColumnIndex + ":" + e.RowIndex;
@@ -300,7 +388,7 @@ namespace ColorS
         {
             ColorDialog cdlg = new ColorDialog();
 
-            if (e.RowIndex >= 1)
+            if (e.RowIndex >= 1 || e.ColumnIndex >=0)
             {
                 cdlg.Color = dataGridView1[e.ColumnIndex, e.RowIndex-1].Style.BackColor;
             }
@@ -344,6 +432,52 @@ namespace ColorS
 
         private void dataGridView1_KeyUp(object sender, KeyEventArgs e)
         {
+        }
+
+        private void loadDataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Get_Data();
+        }
+
+        private void loadPresetLightToDarkToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string apppath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetName().CodeBase);
+
+            string pathfile = apppath + "\\" + "data\\template_ltd.xml";
+
+            Get_Data_FromPreset(pathfile);
+        }
+
+        private void loadPresetDarkToLightToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string apppath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetName().CodeBase);
+
+            string pathfile = apppath + "\\" + "data\\template_dtl.xml";
+
+            Get_Data_FromPreset(pathfile);
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox ab = new AboutBox();
+
+            ab.ShowDialog();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+
+            if (MessageBox.Show("Do you want to exit?", "Color Table Generator",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                e.Cancel = false;
+             //   Application.Exit();
+            }
+
+            else
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Reflection;
 
 namespace ColorS
 {
@@ -37,6 +38,7 @@ namespace ColorS
             }
 
             workpath_textbox.Text = Properties.Settings.Default.WorkPath;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
