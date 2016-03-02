@@ -48,6 +48,10 @@ namespace ColorS
             {
                 row.Height = 35;
             }
+
+            ColorItems(Color.White);
+
+            GenerateTemplatesMenuItems();
         }
 
         private Color RandColor()
@@ -166,12 +170,12 @@ namespace ColorS
             if (File.Exists(Properties.Settings.Default.WorkPath + "\\" + Properties.Settings.Default.ColorTableFileName))
             {
                 get_data_button.Enabled = true;
-                loadDataToolStripMenuItem.Enabled = true;
+                openToolStripMenuItem.Enabled = true;
             }
             else
             {
                 get_data_button.Enabled = false;
-                loadDataToolStripMenuItem.Enabled = false;
+                openToolStripMenuItem.Enabled = false;
             }
         }
 
@@ -366,7 +370,7 @@ namespace ColorS
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            label2.Text = e.ColumnIndex + ":" + e.RowIndex;
+            label2.Text = e.ColumnIndex + ":" + e.RowIndex +"  " + dataGridView1[e.ColumnIndex,e.RowIndex].Style.BackColor;
 
             dataGridView1.Refresh();
         }
@@ -434,29 +438,6 @@ namespace ColorS
         {
         }
 
-        private void loadDataToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Get_Data();
-        }
-
-        private void loadPresetLightToDarkToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            string apppath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetName().CodeBase);
-
-            string pathfile = apppath + "\\" + "data\\template_ltd.xml";
-
-            Get_Data_FromPreset(pathfile);
-        }
-
-        private void loadPresetDarkToLightToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            string apppath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetName().CodeBase);
-
-            string pathfile = apppath + "\\" + "data\\template_dtl.xml";
-
-            Get_Data_FromPreset(pathfile);
-        }
-
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AboutBox ab = new AboutBox();
@@ -502,8 +483,99 @@ namespace ColorS
                 }
 
             }
-        } 
+        }
 
-            
+        public ToolStripMenuItem fileItem = new ToolStripMenuItem("Templates");
+
+        void GenerateTemplatesMenuItems()
+        {
+
+
+            string apppath = AppDomain.CurrentDomain.BaseDirectory;
+
+            string path = apppath + @"\data\";
+            DirectoryInfo d = new DirectoryInfo(path);
+            FileInfo[] Files = d.GetFiles("*.xml"); //Getting Text files
+
+            List<ToolStripMenuItem> TemplateItems = new List<ToolStripMenuItem>();
+
+            foreach (FileInfo file in Files)
+            {
+                ToolStripMenuItem item = new ToolStripMenuItem(Path.GetFileNameWithoutExtension(file.Name));
+                item.Click += Item_Click;
+
+                TemplateItems.Add(item);
+            }
+
+
+
+            foreach (ToolStripMenuItem items in TemplateItems)
+            {
+                fileItem.DropDownItems.Add(items);
+
+            }
+
+
+            fileItem.DropDownItemClicked += DropDownItemClicked;
+
+
+            //List<ToolStripMenuItem> TemplatesItems;
+
+            //ToolStripMenuItem item1 = new ToolStripMenuItem("1");
+            //item1.Click += item1_Click;
+           // fileItem.DropDownItems.Add(item1);
+
+            //fileItem.DropDownItems.Add(new ToolStripMenuItem("2"));
+
+            menuStrip1.Items.Add(fileItem);
+        }
+
+        private void Item_Click(object sender, EventArgs e)
+        {
+
+            for (int i = 0; i < fileItem.DropDownItems.Count; i++)
+            {
+                ToolStripMenuItem item =  (ToolStripMenuItem)fileItem.DropDownItems[i];
+
+                item.Checked = false;
+            }
+
+
+
+            ToolStripMenuItem senderButton = (ToolStripMenuItem)sender;
+
+            senderButton.Checked = true;
+
+            //MessageBox.Show("Click");
+        }
+
+        private void DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+           //MessageBox.Show(e.ClickedItem.Text);
+
+            string apppath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetName().CodeBase);
+
+            string pathfile = apppath + "\\" + "data\\"+ e.ClickedItem.Text+".xml";
+
+
+            Get_Data_FromPreset(pathfile);
+        }
+
+
+        void ColorItems(Color InColor)
+        {
+            for (int i = 0; i < dataGridView1.ColumnCount; i++)
+            {
+                for (int j = 0; j < dataGridView1.RowCount; j++)
+                {
+                    dataGridView1[i, j].Style.BackColor = InColor;
+                }
+            }
+        }
+
+        private void openToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Get_Data();
+        }
     }
 }

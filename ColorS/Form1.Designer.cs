@@ -36,9 +36,6 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadPresetLightToDarkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadPresetDarkToLightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,7 +88,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 33);
+            this.label1.Location = new System.Drawing.Point(567, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 1;
@@ -124,47 +121,22 @@
             // 
             this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
             this.clearToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.clearToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.clearToolStripMenuItem.Text = "New";
             this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click_1);
             // 
             // openToolStripMenuItem
             // 
-            this.openToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.loadDataToolStripMenuItem,
-            this.loadPresetLightToDarkToolStripMenuItem,
-            this.loadPresetDarkToLightToolStripMenuItem});
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.openToolStripMenuItem.Text = "Open";
-            // 
-            // loadDataToolStripMenuItem
-            // 
-            this.loadDataToolStripMenuItem.Name = "loadDataToolStripMenuItem";
-            this.loadDataToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.loadDataToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.loadDataToolStripMenuItem.Text = "Load Data";
-            this.loadDataToolStripMenuItem.Click += new System.EventHandler(this.loadDataToolStripMenuItem_Click);
-            // 
-            // loadPresetLightToDarkToolStripMenuItem
-            // 
-            this.loadPresetLightToDarkToolStripMenuItem.Name = "loadPresetLightToDarkToolStripMenuItem";
-            this.loadPresetLightToDarkToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.loadPresetLightToDarkToolStripMenuItem.Text = "Load Preset (Light to Dark)";
-            this.loadPresetLightToDarkToolStripMenuItem.Click += new System.EventHandler(this.loadPresetLightToDarkToolStripMenuItem_Click);
-            // 
-            // loadPresetDarkToLightToolStripMenuItem
-            // 
-            this.loadPresetDarkToLightToolStripMenuItem.Name = "loadPresetDarkToLightToolStripMenuItem";
-            this.loadPresetDarkToLightToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
-            this.loadPresetDarkToLightToolStripMenuItem.Text = "Load Preset (Dark to Light)";
-            this.loadPresetDarkToLightToolStripMenuItem.Click += new System.EventHandler(this.loadPresetDarkToLightToolStripMenuItem_Click);
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click_1);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -172,7 +144,7 @@
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.X)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // editToolStripMenuItem
@@ -261,12 +233,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(606, 33);
+            this.label2.Location = new System.Drawing.Point(12, 33);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(22, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "0:0";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Form1
             // 
@@ -315,9 +286,6 @@
         private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loadPresetLightToDarkToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loadDataToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loadPresetDarkToLightToolStripMenuItem;
     }
 }
 
