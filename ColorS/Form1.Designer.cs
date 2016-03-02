@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadPresetLightToDarkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadPresetDarkToLightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,9 +52,6 @@
             this.get_data_button = new System.Windows.Forms.Button();
             this.findfile_timer = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
-            this.loadPresetLightToDarkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadPresetDarkToLightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -65,14 +65,14 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dataGridView1.ColumnHeadersHeight = 50;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(12, 49);
             this.dataGridView1.Name = "dataGridView1";
@@ -117,7 +117,7 @@
             this.saveToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // clearToolStripMenuItem
@@ -137,6 +137,28 @@
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openToolStripMenuItem.Text = "Open";
+            // 
+            // loadDataToolStripMenuItem
+            // 
+            this.loadDataToolStripMenuItem.Name = "loadDataToolStripMenuItem";
+            this.loadDataToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.loadDataToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.loadDataToolStripMenuItem.Text = "Load Data";
+            this.loadDataToolStripMenuItem.Click += new System.EventHandler(this.loadDataToolStripMenuItem_Click);
+            // 
+            // loadPresetLightToDarkToolStripMenuItem
+            // 
+            this.loadPresetLightToDarkToolStripMenuItem.Name = "loadPresetLightToDarkToolStripMenuItem";
+            this.loadPresetLightToDarkToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.loadPresetLightToDarkToolStripMenuItem.Text = "Load Preset (Light to Dark)";
+            this.loadPresetLightToDarkToolStripMenuItem.Click += new System.EventHandler(this.loadPresetLightToDarkToolStripMenuItem_Click);
+            // 
+            // loadPresetDarkToLightToolStripMenuItem
+            // 
+            this.loadPresetDarkToLightToolStripMenuItem.Name = "loadPresetDarkToLightToolStripMenuItem";
+            this.loadPresetDarkToLightToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.loadPresetDarkToLightToolStripMenuItem.Text = "Load Preset (Dark to Light)";
+            this.loadPresetDarkToLightToolStripMenuItem.Click += new System.EventHandler(this.loadPresetDarkToLightToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
@@ -159,14 +181,14 @@
             this.preferenceToolStripMenuItem,
             this.generatorToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // preferenceToolStripMenuItem
             // 
             this.preferenceToolStripMenuItem.Name = "preferenceToolStripMenuItem";
             this.preferenceToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.P)));
-            this.preferenceToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.preferenceToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.preferenceToolStripMenuItem.Text = "Preference";
             this.preferenceToolStripMenuItem.Click += new System.EventHandler(this.preferenceToolStripMenuItem_Click);
             // 
@@ -175,14 +197,14 @@
             this.generatorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.generateRandomColorToolStripMenuItem});
             this.generatorToolStripMenuItem.Name = "generatorToolStripMenuItem";
-            this.generatorToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.generatorToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.generatorToolStripMenuItem.Text = "Generator";
             // 
             // generateRandomColorToolStripMenuItem
             // 
             this.generateRandomColorToolStripMenuItem.Name = "generateRandomColorToolStripMenuItem";
             this.generateRandomColorToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.generateRandomColorToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.generateRandomColorToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
             this.generateRandomColorToolStripMenuItem.Text = "GenerateRandomColor";
             this.generateRandomColorToolStripMenuItem.Click += new System.EventHandler(this.generateRandomColorToolStripMenuItem_Click);
             // 
@@ -192,21 +214,21 @@
             this.aboutToolStripMenuItem,
             this.helpToolStripMenuItem1});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F12;
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem1
             // 
             this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
             this.helpToolStripMenuItem1.Text = "Help";
             // 
             // save_button
@@ -245,28 +267,6 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "0:0";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // loadPresetLightToDarkToolStripMenuItem
-            // 
-            this.loadPresetLightToDarkToolStripMenuItem.Name = "loadPresetLightToDarkToolStripMenuItem";
-            this.loadPresetLightToDarkToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
-            this.loadPresetLightToDarkToolStripMenuItem.Text = "Load Preset (Light to Dark)";
-            this.loadPresetLightToDarkToolStripMenuItem.Click += new System.EventHandler(this.loadPresetLightToDarkToolStripMenuItem_Click);
-            // 
-            // loadDataToolStripMenuItem
-            // 
-            this.loadDataToolStripMenuItem.Name = "loadDataToolStripMenuItem";
-            this.loadDataToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.loadDataToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
-            this.loadDataToolStripMenuItem.Text = "Load Data";
-            this.loadDataToolStripMenuItem.Click += new System.EventHandler(this.loadDataToolStripMenuItem_Click);
-            // 
-            // loadPresetDarkToLightToolStripMenuItem
-            // 
-            this.loadPresetDarkToLightToolStripMenuItem.Name = "loadPresetDarkToLightToolStripMenuItem";
-            this.loadPresetDarkToLightToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
-            this.loadPresetDarkToLightToolStripMenuItem.Text = "Load Preset (Dark to Light)";
-            this.loadPresetDarkToLightToolStripMenuItem.Click += new System.EventHandler(this.loadPresetDarkToLightToolStripMenuItem_Click);
             // 
             // Form1
             // 

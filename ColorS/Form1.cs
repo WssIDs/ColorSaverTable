@@ -479,5 +479,31 @@ namespace ColorS
                 e.Cancel = true;
             }
         }
+           
+        
+        
+        void SortMassive()
+        {
+            Color clr = new Color();
+
+
+            for (int i = 0; i < dataGridView1.ColumnCount; i++)
+            {
+
+                for (int k = 0; k < dataGridView1.RowCount / 2; k++)
+                {
+                    int n = dataGridView1.RowCount - 1;
+
+                    clr = dataGridView1[i, k].Style.BackColor;
+
+                    dataGridView1[i, k].Style.BackColor = dataGridView1[i, n - k].Style.BackColor;
+
+                    dataGridView1[i, n - k].Style.BackColor = clr;
+                }
+
+            }
+        } 
+
+            
     }
 }
