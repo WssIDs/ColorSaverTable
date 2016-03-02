@@ -370,10 +370,21 @@ namespace ColorS
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            label2.Text = e.ColumnIndex + ":" + e.RowIndex +"  " + dataGridView1[e.ColumnIndex,e.RowIndex].Style.BackColor;
+            if (e.ColumnIndex < 0 || e.RowIndex < 0)
+            {
+            }
+            else
+            {
 
-            dataGridView1.Refresh();
+                label2.Text = e.ColumnIndex + ":" + e.RowIndex+" "+ dataGridView1[e.ColumnIndex, e.RowIndex].Style.BackColor;
+
+                pictureBox1.BackColor = dataGridView1[e.ColumnIndex, e.RowIndex].Style.BackColor;
+
+                dataGridView1.Refresh();
+            }
         }
+
+
 
 
         private void ClearDataGridView()
@@ -392,21 +403,28 @@ namespace ColorS
         {
             ColorDialog cdlg = new ColorDialog();
 
-            if (e.RowIndex >= 1 || e.ColumnIndex >=0)
+            //if (e.RowIndex >= 1 || e.ColumnIndex >=0)
+            //{
+            //   cdlg.Color = dataGridView1[e.ColumnIndex, e.RowIndex-1].Style.BackColor;
+            //}
+
+            if (e.ColumnIndex < 0 || e.RowIndex < 0)
             {
-                cdlg.Color = dataGridView1[e.ColumnIndex, e.RowIndex-1].Style.BackColor;
+
             }
 
             else
             {
                 cdlg.Color = dataGridView1[e.ColumnIndex, e.RowIndex].Style.BackColor;
-            }
 
                 if (cdlg.ShowDialog() == DialogResult.OK)
                 {
-                    dataGridView1[e.ColumnIndex, e.RowIndex].Style.BackColor = cdlg.Color;
-                }
 
+                    dataGridView1[e.ColumnIndex, e.RowIndex].Style.BackColor = cdlg.Color;
+                    label2.Text = e.ColumnIndex + ":" + e.RowIndex + "  " + dataGridView1[e.ColumnIndex, e.RowIndex].Style.BackColor;
+                    pictureBox1.BackColor = dataGridView1[e.ColumnIndex, e.RowIndex].Style.BackColor;
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -431,7 +449,66 @@ namespace ColorS
 
         private void dataGridView1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
+            //MessageBox.Show(@"[" + (dataGridView1.CurrentCell.ColumnIndex).ToString() + "," + (dataGridView1.CurrentCell.RowIndex).ToString() + "]");
 
+
+
+            if (e.KeyCode == Keys.O)
+            {
+
+                if (dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor.R < 255)
+                {
+                    if (dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor.G < 255)
+                    {
+                        if (dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor.B < 255)
+                        {
+                            Color newcolor = Color.FromArgb(dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor.R + 1, dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor.G + 1, dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor.B + 1);
+
+                            //newcolor.R = dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor.R + 1;
+                            //newcolor.G = dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor.G + 1;
+                            //newcolor.B = dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor.B + 1;
+                            //newcolor.A = dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor.A + 1;
+
+                            dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor = newcolor;
+
+                            label2.Text = dataGridView1.CurrentCell.ColumnIndex + ":" + dataGridView1.CurrentCell.RowIndex + " " + dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor;
+
+                            pictureBox1.BackColor = dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor;
+                        }
+                    }
+                }
+
+                else if (dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor.R >= 255 || dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor.G >= 255 || dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor.B >= 255)
+                {
+                    MessageBox.Show("rewr");
+                }
+            }
+
+            if (e.KeyCode == Keys.P)
+            {
+
+                if (dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor.R > 0)
+                {
+                    if (dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor.G > 0)
+                    {
+                        if (dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor.B > 0)
+                        {
+                            Color newcolor = Color.FromArgb(dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor.R - 1, dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor.G - 1, dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor.B - 1);
+
+                            //newcolor.R = dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor.R + 1;
+                            //newcolor.G = dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor.G + 1;
+                            //newcolor.B = dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor.B + 1;
+                            //newcolor.A = dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor.A + 1;
+
+                            dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor = newcolor;
+
+                            label2.Text = dataGridView1.CurrentCell.ColumnIndex + ":" + dataGridView1.CurrentCell.RowIndex + " " + dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor;
+
+                            pictureBox1.BackColor = dataGridView1[dataGridView1.CurrentCell.ColumnIndex, dataGridView1.CurrentCell.RowIndex].Style.BackColor;
+                        }
+                    }
+                }
+            }
         }
 
         private void dataGridView1_KeyUp(object sender, KeyEventArgs e)
@@ -576,6 +653,21 @@ namespace ColorS
         private void openToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             Get_Data();
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            ColorItems(Color.White);
+        }
+
+        private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
         }
     }
 }
