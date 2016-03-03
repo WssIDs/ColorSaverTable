@@ -12,6 +12,9 @@ using System.Reflection;
 
 namespace ColorS
 {
+    /// <summary>
+    /// Settings Form
+    /// </summary>
     public partial class SettingsForm : Form
     {
         public SettingsForm()
@@ -24,7 +27,7 @@ namespace ColorS
 
             if (File.Exists(Properties.Settings.Default.WorkPath +"\\"+ Properties.Settings.Default.ColorTableFileName))
             {
-                error_label.ForeColor = Color.LightGreen;
+                error_label.ForeColor = Color.Green;
                 error_label.Text = Properties.Settings.Default.ColorTableFileName + " is ready";
 
                 error_label.Visible = true;
@@ -38,12 +41,14 @@ namespace ColorS
             }
 
             workpath_textbox.Text = Properties.Settings.Default.WorkPath;
+            loadcolortable_check.Checked = Properties.Settings.Default.LoadColorTable;
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.WorkPath = workpath_textbox.Text;
+            Properties.Settings.Default.LoadColorTable = loadcolortable_check.Checked;
             Properties.Settings.Default.Save();
 
             Close();
@@ -57,6 +62,7 @@ namespace ColorS
         private void button2_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.WorkPath = workpath_textbox.Text;
+            Properties.Settings.Default.LoadColorTable = loadcolortable_check.Checked;
             Properties.Settings.Default.Save();
         }
 
@@ -78,7 +84,7 @@ namespace ColorS
 
                 if (File.Exists(fdlg.SelectedPath +"\\"+ Properties.Settings.Default.ColorTableFileName))
                 {
-                    error_label.ForeColor = Color.LightGreen;
+                    error_label.ForeColor = Color.Green;
                     error_label.Text = Properties.Settings.Default.ColorTableFileName + " is ready";
 
                     error_label.Visible = true;

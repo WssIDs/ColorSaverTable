@@ -46,5 +46,17 @@ namespace ColorS.Properties {
                 this["ColorTableFileName"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool LoadColorTable {
+            get {
+                return ((bool)(this["LoadColorTable"]));
+            }
+            set {
+                this["LoadColorTable"] = value;
+            }
+        }
     }
 }

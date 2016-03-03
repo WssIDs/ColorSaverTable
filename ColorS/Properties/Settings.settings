@@ -8,5 +8,8 @@
     <Setting Name="ColorTableFileName" Type="System.String" Scope="User">
       <Value Profile="(Default)">color_table.xml</Value>
     </Setting>
+    <Setting Name="LoadColorTable" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

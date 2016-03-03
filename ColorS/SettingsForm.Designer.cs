@@ -35,6 +35,7 @@
             this.workpath_textbox = new System.Windows.Forms.TextBox();
             this.pickfolder_button = new System.Windows.Forms.Button();
             this.error_label = new System.Windows.Forms.Label();
+            this.loadcolortable_check = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // button1
@@ -107,6 +108,16 @@
             this.error_label.Text = "no files to load";
             this.error_label.Visible = false;
             // 
+            // loadcolortable_check
+            // 
+            this.loadcolortable_check.AutoSize = true;
+            this.loadcolortable_check.Location = new System.Drawing.Point(90, 63);
+            this.loadcolortable_check.Name = "loadcolortable_check";
+            this.loadcolortable_check.Size = new System.Drawing.Size(145, 17);
+            this.loadcolortable_check.TabIndex = 8;
+            this.loadcolortable_check.Text = "load color table at startup";
+            this.loadcolortable_check.UseVisualStyleBackColor = true;
+            // 
             // SettingsForm
             // 
             this.AcceptButton = this.button1;
@@ -114,6 +125,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.button3;
             this.ClientSize = new System.Drawing.Size(562, 261);
+            this.Controls.Add(this.loadcolortable_check);
             this.Controls.Add(this.error_label);
             this.Controls.Add(this.pickfolder_button);
             this.Controls.Add(this.workpath_textbox);
@@ -141,5 +153,6 @@
         private System.Windows.Forms.TextBox workpath_textbox;
         private System.Windows.Forms.Button pickfolder_button;
         private System.Windows.Forms.Label error_label;
+        private System.Windows.Forms.CheckBox loadcolortable_check;
     }
 }
