@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<head>
+	<color index="0">
+		<ColumnIndex>0</ColumnIndex>
+		<RowIndex>0</RowIndex>
+		<R>255</R>
+		<G>255</G>
+		<B>255</B>
+		<A>255</A>
+	</color>
+	<color index="1">
+		<ColumnIndex>1</ColumnIndex>
+		<RowIndex>0</RowIndex>
+		<R>255</R>
+		<G>0</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="2">
+		<ColumnIndex>2</ColumnIndex>
+		<RowIndex>0</RowIndex>
+		<R>255</R>
+		<G>128</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="3">
+		<ColumnIndex>3</ColumnIndex>
+		<RowIndex>0</RowIndex>
+		<R>255</R>
+		<G>255</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="4">
+		<ColumnIndex>4</ColumnIndex>
+		<RowIndex>0</RowIndex>
+		<R>128</R>
+		<G>255</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="5">
+		<ColumnIndex>5</ColumnIndex>
+		<RowIndex>0</RowIndex>
+		<R>0</R>
+		<G>255</G>
+		<B>64</B>
+		<A>255</A>
+	</color>
+	<color index="6">
+		<ColumnIndex>6</ColumnIndex>
+		<RowIndex>0</RowIndex>
+		<R>0</R>
+		<G>255</G>
+		<B>255</B>
+		<A>255</A>
+	</color>
+	<color index="7">
+		<ColumnIndex>7</ColumnIndex>
+		<RowIndex>0</RowIndex>
+		<R>0</R>
+		<G>128</G>
+		<B>255</B>
+		<A>255</A>
+	</color>
+	<color index="8">
+		<ColumnIndex>8</ColumnIndex>
+		<RowIndex>0</RowIndex>
+		<R>0</R>
+		<G>0</G>
+		<B>255</B>
+		<A>255</A>
+	</color>
+	<color index="9">
+		<ColumnIndex>9</ColumnIndex>
+		<RowIndex>0</RowIndex>
+		<R>128</R>
+		<G>0</G>
+		<B>255</B>
+		<A>255</A>
+	</color>
+	<color index="10">
+		<ColumnIndex>10</ColumnIndex>
+		<RowIndex>0</RowIndex>
+		<R>255</R>
+		<G>0</G>
+		<B>255</B>
+		<A>255</A>
+	</color>
+	<color index="11">
+		<ColumnIndex>11</ColumnIndex>
+		<RowIndex>0</RowIndex>
+		<R>255</R>
+		<G>0</G>
+		<B>128</B>
+		<A>255</A>
+	</color>
+	<color index="12">
+		<ColumnIndex>12</ColumnIndex>
+		<RowIndex>0</RowIndex>
+		<R>192</R>
+		<G>192</G>
+		<B>192</B>
+		<A>255</A>
+	</color>
+	<color index="13">
+		<ColumnIndex>13</ColumnIndex>
+		<RowIndex>0</RowIndex>
+		<R>128</R>
+		<G>128</G>
+		<B>128</B>
+		<A>255</A>
+	</color>
+	<color index="14">
+		<ColumnIndex>0</ColumnIndex>
+		<RowIndex>1</RowIndex>
+		<R>221</R>
+		<G>221</G>
+		<B>221</B>
+		<A>255</A>
+	</color>
+	<color index="15">
+		<ColumnIndex>1</ColumnIndex>
+		<RowIndex>1</RowIndex>
+		<R>204</R>
+		<G>0</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="16">
+		<ColumnIndex>2</ColumnIndex>
+		<RowIndex>1</RowIndex>
+		<R>213</R>
+		<G>106</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="17">
+		<ColumnIndex>3</ColumnIndex>
+		<RowIndex>1</RowIndex>
+		<R>217</R>
+		<G>217</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="18">
+		<ColumnIndex>4</ColumnIndex>
+		<RowIndex>1</RowIndex>
+		<R>113</R>
+		<G>225</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="19">
+		<ColumnIndex>5</ColumnIndex>
+		<RowIndex>1</RowIndex>
+		<R>0</R>
+		<G>232</G>
+		<B>58</B>
+		<A>255</A>
+	</color>
+	<color index="20">
+		<ColumnIndex>6</ColumnIndex>
+		<RowIndex>1</RowIndex>
+		<R>0</R>
+		<G>206</G>
+		<B>206</B>
+		<A>255</A>
+	</color>
+	<color index="21">
+		<ColumnIndex>7</ColumnIndex>
+		<RowIndex>1</RowIndex>
+		<R>0</R>
+		<G>105</G>
+		<B>210</B>
+		<A>255</A>
+	</color>
+	<color index="22">
+		<ColumnIndex>8</ColumnIndex>
+		<RowIndex>1</RowIndex>
+		<R>0</R>
+		<G>0</G>
+		<B>210</B>
+		<A>255</A>
+	</color>
+	<color index="23">
+		<ColumnIndex>9</ColumnIndex>
+		<RowIndex>1</RowIndex>
+		<R>107</R>
+		<G>0</G>
+		<B>215</B>
+		<A>255</A>
+	</color>
+	<color index="24">
+		<ColumnIndex>10</ColumnIndex>
+		<RowIndex>1</RowIndex>
+		<R>215</R>
+		<G>0</G>
+		<B>215</B>
+		<A>255</A>
+	</color>
+	<color index="25">
+		<ColumnIndex>11</ColumnIndex>
+		<RowIndex>1</RowIndex>
+		<R>215</R>
+		<G>0</G>
+		<B>107</B>
+		<A>255</A>
+	</color>
+	<color index="26">
+		<ColumnIndex>12</ColumnIndex>
+		<RowIndex>1</RowIndex>
+		<R>160</R>
+		<G>160</G>
+		<B>160</B>
+		<A>255</A>
+	</color>
+	<color index="27">
+		<ColumnIndex>13</ColumnIndex>
+		<RowIndex>1</RowIndex>
+		<R>110</R>
+		<G>110</G>
+		<B>110</B>
+		<A>255</A>
+	</color>
+	<color index="28">
+		<ColumnIndex>0</ColumnIndex>
+		<RowIndex>2</RowIndex>
+		<R>158</R>
+		<G>158</G>
+		<B>158</B>
+		<A>255</A>
+	</color>
+	<color index="29">
+		<ColumnIndex>1</ColumnIndex>
+		<RowIndex>2</RowIndex>
+		<R>166</R>
+		<G>0</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="30">
+		<ColumnIndex>2</ColumnIndex>
+		<RowIndex>2</RowIndex>
+		<R>179</R>
+		<G>89</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="31">
+		<ColumnIndex>3</ColumnIndex>
+		<RowIndex>2</RowIndex>
+		<R>196</R>
+		<G>196</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="32">
+		<ColumnIndex>4</ColumnIndex>
+		<RowIndex>2</RowIndex>
+		<R>94</R>
+		<G>187</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="33">
+		<ColumnIndex>5</ColumnIndex>
+		<RowIndex>2</RowIndex>
+		<R>0</R>
+		<G>187</G>
+		<B>47</B>
+		<A>255</A>
+	</color>
+	<color index="34">
+		<ColumnIndex>6</ColumnIndex>
+		<RowIndex>2</RowIndex>
+		<R>0</R>
+		<G>176</G>
+		<B>176</B>
+		<A>255</A>
+	</color>
+	<color index="35">
+		<ColumnIndex>7</ColumnIndex>
+		<RowIndex>2</RowIndex>
+		<R>0</R>
+		<G>89</G>
+		<B>179</B>
+		<A>255</A>
+	</color>
+	<color index="36">
+		<ColumnIndex>8</ColumnIndex>
+		<RowIndex>2</RowIndex>
+		<R>0</R>
+		<G>0</G>
+		<B>174</B>
+		<A>255</A>
+	</color>
+	<color index="37">
+		<ColumnIndex>9</ColumnIndex>
+		<RowIndex>2</RowIndex>
+		<R>91</R>
+		<G>0</G>
+		<B>183</B>
+		<A>255</A>
+	</color>
+	<color index="38">
+		<ColumnIndex>10</ColumnIndex>
+		<RowIndex>2</RowIndex>
+		<R>185</R>
+		<G>0</G>
+		<B>185</B>
+		<A>255</A>
+	</color>
+	<color index="39">
+		<ColumnIndex>11</ColumnIndex>
+		<RowIndex>2</RowIndex>
+		<R>193</R>
+		<G>0</G>
+		<B>97</B>
+		<A>255</A>
+	</color>
+	<color index="40">
+		<ColumnIndex>12</ColumnIndex>
+		<RowIndex>2</RowIndex>
+		<R>136</R>
+		<G>136</G>
+		<B>136</B>
+		<A>255</A>
+	</color>
+	<color index="41">
+		<ColumnIndex>13</ColumnIndex>
+		<RowIndex>2</RowIndex>
+		<R>92</R>
+		<G>92</G>
+		<B>92</B>
+		<A>255</A>
+	</color>
+	<color index="42">
+		<ColumnIndex>0</ColumnIndex>
+		<RowIndex>3</RowIndex>
+		<R>125</R>
+		<G>125</G>
+		<B>125</B>
+		<A>255</A>
+	</color>
+	<color index="43">
+		<ColumnIndex>1</ColumnIndex>
+		<RowIndex>3</RowIndex>
+		<R>138</R>
+		<G>0</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="44">
+		<ColumnIndex>2</ColumnIndex>
+		<RowIndex>3</RowIndex>
+		<R>136</R>
+		<G>68</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="45">
+		<ColumnIndex>3</ColumnIndex>
+		<RowIndex>3</RowIndex>
+		<R>170</R>
+		<G>170</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="46">
+		<ColumnIndex>4</ColumnIndex>
+		<RowIndex>3</RowIndex>
+		<R>78</R>
+		<G>155</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="47">
+		<ColumnIndex>5</ColumnIndex>
+		<RowIndex>3</RowIndex>
+		<R>0</R>
+		<G>159</G>
+		<B>40</B>
+		<A>255</A>
+	</color>
+	<color index="48">
+		<ColumnIndex>6</ColumnIndex>
+		<RowIndex>3</RowIndex>
+		<R>0</R>
+		<G>151</G>
+		<B>151</B>
+		<A>255</A>
+	</color>
+	<color index="49">
+		<ColumnIndex>7</ColumnIndex>
+		<RowIndex>3</RowIndex>
+		<R>0</R>
+		<G>75</G>
+		<B>151</B>
+		<A>255</A>
+	</color>
+	<color index="50">
+		<ColumnIndex>8</ColumnIndex>
+		<RowIndex>3</RowIndex>
+		<R>0</R>
+		<G>0</G>
+		<B>147</B>
+		<A>255</A>
+	</color>
+	<color index="51">
+		<ColumnIndex>9</ColumnIndex>
+		<RowIndex>3</RowIndex>
+		<R>78</R>
+		<G>0</G>
+		<B>155</B>
+		<A>255</A>
+	</color>
+	<color index="52">
+		<ColumnIndex>10</ColumnIndex>
+		<RowIndex>3</RowIndex>
+		<R>147</R>
+		<G>0</G>
+		<B>147</B>
+		<A>255</A>
+	</color>
+	<color index="53">
+		<ColumnIndex>11</ColumnIndex>
+		<RowIndex>3</RowIndex>
+		<R>155</R>
+		<G>0</G>
+		<B>78</B>
+		<A>255</A>
+	</color>
+	<color index="54">
+		<ColumnIndex>12</ColumnIndex>
+		<RowIndex>3</RowIndex>
+		<R>115</R>
+		<G>115</G>
+		<B>115</B>
+		<A>255</A>
+	</color>
+	<color index="55">
+		<ColumnIndex>13</ColumnIndex>
+		<RowIndex>3</RowIndex>
+		<R>68</R>
+		<G>68</G>
+		<B>68</B>
+		<A>255</A>
+	</color>
+	<color index="56">
+		<ColumnIndex>0</ColumnIndex>
+		<RowIndex>4</RowIndex>
+		<R>96</R>
+		<G>96</G>
+		<B>96</B>
+		<A>255</A>
+	</color>
+	<color index="57">
+		<ColumnIndex>1</ColumnIndex>
+		<RowIndex>4</RowIndex>
+		<R>102</R>
+		<G>0</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="58">
+		<ColumnIndex>2</ColumnIndex>
+		<RowIndex>4</RowIndex>
+		<R>100</R>
+		<G>50</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="59">
+		<ColumnIndex>3</ColumnIndex>
+		<RowIndex>4</RowIndex>
+		<R>132</R>
+		<G>132</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="60">
+		<ColumnIndex>4</ColumnIndex>
+		<RowIndex>4</RowIndex>
+		<R>64</R>
+		<G>128</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="61">
+		<ColumnIndex>5</ColumnIndex>
+		<RowIndex>4</RowIndex>
+		<R>0</R>
+		<G>119</G>
+		<B>30</B>
+		<A>255</A>
+	</color>
+	<color index="62">
+		<ColumnIndex>6</ColumnIndex>
+		<RowIndex>4</RowIndex>
+		<R>0</R>
+		<G>121</G>
+		<B>121</B>
+		<A>255</A>
+	</color>
+	<color index="63">
+		<ColumnIndex>7</ColumnIndex>
+		<RowIndex>4</RowIndex>
+		<R>0</R>
+		<G>58</G>
+		<B>117</B>
+		<A>255</A>
+	</color>
+	<color index="64">
+		<ColumnIndex>8</ColumnIndex>
+		<RowIndex>4</RowIndex>
+		<R>0</R>
+		<G>0</G>
+		<B>111</B>
+		<A>255</A>
+	</color>
+	<color index="65">
+		<ColumnIndex>9</ColumnIndex>
+		<RowIndex>4</RowIndex>
+		<R>56</R>
+		<G>0</G>
+		<B>113</B>
+		<A>255</A>
+	</color>
+	<color index="66">
+		<ColumnIndex>10</ColumnIndex>
+		<RowIndex>4</RowIndex>
+		<R>121</R>
+		<G>0</G>
+		<B>121</B>
+		<A>255</A>
+	</color>
+	<color index="67">
+		<ColumnIndex>11</ColumnIndex>
+		<RowIndex>4</RowIndex>
+		<R>128</R>
+		<G>0</G>
+		<B>64</B>
+		<A>255</A>
+	</color>
+	<color index="68">
+		<ColumnIndex>12</ColumnIndex>
+		<RowIndex>4</RowIndex>
+		<R>93</R>
+		<G>93</G>
+		<B>93</B>
+		<A>255</A>
+	</color>
+	<color index="69">
+		<ColumnIndex>13</ColumnIndex>
+		<RowIndex>4</RowIndex>
+		<R>53</R>
+		<G>53</G>
+		<B>53</B>
+		<A>255</A>
+	</color>
+	<color index="70">
+		<ColumnIndex>0</ColumnIndex>
+		<RowIndex>5</RowIndex>
+		<R>44</R>
+		<G>44</G>
+		<B>44</B>
+		<A>255</A>
+	</color>
+	<color index="71">
+		<ColumnIndex>1</ColumnIndex>
+		<RowIndex>5</RowIndex>
+		<R>79</R>
+		<G>0</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="72">
+		<ColumnIndex>2</ColumnIndex>
+		<RowIndex>5</RowIndex>
+		<R>70</R>
+		<G>35</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="73">
+		<ColumnIndex>3</ColumnIndex>
+		<RowIndex>5</RowIndex>
+		<R>106</R>
+		<G>106</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="74">
+		<ColumnIndex>4</ColumnIndex>
+		<RowIndex>5</RowIndex>
+		<R>49</R>
+		<G>98</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="75">
+		<ColumnIndex>5</ColumnIndex>
+		<RowIndex>5</RowIndex>
+		<R>0</R>
+		<G>79</G>
+		<B>20</B>
+		<A>255</A>
+	</color>
+	<color index="76">
+		<ColumnIndex>6</ColumnIndex>
+		<RowIndex>5</RowIndex>
+		<R>0</R>
+		<G>98</G>
+		<B>98</B>
+		<A>255</A>
+	</color>
+	<color index="77">
+		<ColumnIndex>7</ColumnIndex>
+		<RowIndex>5</RowIndex>
+		<R>0</R>
+		<G>49</G>
+		<B>98</B>
+		<A>255</A>
+	</color>
+	<color index="78">
+		<ColumnIndex>8</ColumnIndex>
+		<RowIndex>5</RowIndex>
+		<R>0</R>
+		<G>0</G>
+		<B>85</B>
+		<A>255</A>
+	</color>
+	<color index="79">
+		<ColumnIndex>9</ColumnIndex>
+		<RowIndex>5</RowIndex>
+		<R>43</R>
+		<G>0</G>
+		<B>85</B>
+		<A>255</A>
+	</color>
+	<color index="80">
+		<ColumnIndex>10</ColumnIndex>
+		<RowIndex>5</RowIndex>
+		<R>94</R>
+		<G>0</G>
+		<B>94</B>
+		<A>255</A>
+	</color>
+	<color index="81">
+		<ColumnIndex>11</ColumnIndex>
+		<RowIndex>5</RowIndex>
+		<R>85</R>
+		<G>0</G>
+		<B>43</B>
+		<A>255</A>
+	</color>
+	<color index="82">
+		<ColumnIndex>12</ColumnIndex>
+		<RowIndex>5</RowIndex>
+		<R>77</R>
+		<G>77</G>
+		<B>77</B>
+		<A>255</A>
+	</color>
+	<color index="83">
+		<ColumnIndex>13</ColumnIndex>
+		<RowIndex>5</RowIndex>
+		<R>37</R>
+		<G>37</G>
+		<B>37</B>
+		<A>255</A>
+	</color>
+	<color index="84">
+		<ColumnIndex>0</ColumnIndex>
+		<RowIndex>6</RowIndex>
+		<R>0</R>
+		<G>0</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="85">
+		<ColumnIndex>1</ColumnIndex>
+		<RowIndex>6</RowIndex>
+		<R>45</R>
+		<G>0</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="86">
+		<ColumnIndex>2</ColumnIndex>
+		<RowIndex>6</RowIndex>
+		<R>36</R>
+		<G>18</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="87">
+		<ColumnIndex>3</ColumnIndex>
+		<RowIndex>6</RowIndex>
+		<R>62</R>
+		<G>62</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="88">
+		<ColumnIndex>4</ColumnIndex>
+		<RowIndex>6</RowIndex>
+		<R>32</R>
+		<G>64</G>
+		<B>0</B>
+		<A>255</A>
+	</color>
+	<color index="89">
+		<ColumnIndex>5</ColumnIndex>
+		<RowIndex>6</RowIndex>
+		<R>0</R>
+		<G>47</G>
+		<B>12</B>
+		<A>255</A>
+	</color>
+	<color index="90">
+		<ColumnIndex>6</ColumnIndex>
+		<RowIndex>6</RowIndex>
+		<R>0</R>
+		<G>64</G>
+		<B>64</B>
+		<A>255</A>
+	</color>
+	<color index="91">
+		<ColumnIndex>7</ColumnIndex>
+		<RowIndex>6</RowIndex>
+		<R>0</R>
+		<G>27</G>
+		<B>53</B>
+		<A>255</A>
+	</color>
+	<color index="92">
+		<ColumnIndex>8</ColumnIndex>
+		<RowIndex>6</RowIndex>
+		<R>0</R>
+		<G>0</G>
+		<B>43</B>
+		<A>255</A>
+	</color>
+	<color index="93">
+		<ColumnIndex>9</ColumnIndex>
+		<RowIndex>6</RowIndex>
+		<R>26</R>
+		<G>0</G>
+		<B>51</B>
+		<A>255</A>
+	</color>
+	<color index="94">
+		<ColumnIndex>10</ColumnIndex>
+		<RowIndex>6</RowIndex>
+		<R>60</R>
+		<G>0</G>
+		<B>60</B>
+		<A>255</A>
+	</color>
+	<color index="95">
+		<ColumnIndex>11</ColumnIndex>
+		<RowIndex>6</RowIndex>
+		<R>51</R>
+		<G>0</G>
+		<B>26</B>
+		<A>255</A>
+	</color>
+	<color index="96">
+		<ColumnIndex>12</ColumnIndex>
+		<RowIndex>6</RowIndex>
+		<R>54</R>
+		<G>54</G>
+		<B>54</B>
+		<A>255</A>
+	</color>
+	<color index="97">
+		<ColumnIndex>13</ColumnIndex>
+		<RowIndex>6</RowIndex>
+		<R>21</R>
+		<G>21</G>
+		<B>21</B>
+		<A>255</A>
+	</color>
+</head>

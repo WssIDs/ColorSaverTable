@@ -107,38 +107,38 @@
             this.toolStripMenuItem5,
             this.toolStripMenuItem6});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 136);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(133, 114);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(132, 22);
             this.toolStripMenuItem2.Text = "Clear Table";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(132, 22);
             this.toolStripMenuItem3.Text = "Sort";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(132, 22);
             this.toolStripMenuItem4.Text = "3";
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(132, 22);
             this.toolStripMenuItem5.Text = "4";
             // 
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(132, 22);
             this.toolStripMenuItem6.Text = "5";
             // 
             // label1
@@ -171,7 +171,7 @@
             this.saveToolStripMenuItem1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // clearToolStripMenuItem
@@ -203,7 +203,7 @@
             // saveAsTemplateToolStripMenuItem
             // 
             this.saveAsTemplateToolStripMenuItem.Name = "saveAsTemplateToolStripMenuItem";
-            this.saveAsTemplateToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.saveAsTemplateToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.saveAsTemplateToolStripMenuItem.Text = "Save as Template";
             this.saveAsTemplateToolStripMenuItem.Click += new System.EventHandler(this.saveAsTemplateToolStripMenuItem_Click);
             // 
@@ -211,7 +211,7 @@
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -221,6 +221,7 @@
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -228,14 +229,14 @@
             this.preferenceToolStripMenuItem,
             this.generatorToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // preferenceToolStripMenuItem
             // 
             this.preferenceToolStripMenuItem.Name = "preferenceToolStripMenuItem";
             this.preferenceToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.P)));
-            this.preferenceToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.preferenceToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.preferenceToolStripMenuItem.Text = "Preference";
             this.preferenceToolStripMenuItem.Click += new System.EventHandler(this.preferenceToolStripMenuItem_Click);
             // 
@@ -244,14 +245,14 @@
             this.generatorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.generateRandomColorToolStripMenuItem});
             this.generatorToolStripMenuItem.Name = "generatorToolStripMenuItem";
-            this.generatorToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.generatorToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.generatorToolStripMenuItem.Text = "Generator";
             // 
             // generateRandomColorToolStripMenuItem
             // 
             this.generateRandomColorToolStripMenuItem.Name = "generateRandomColorToolStripMenuItem";
             this.generateRandomColorToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.generateRandomColorToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.generateRandomColorToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
             this.generateRandomColorToolStripMenuItem.Text = "GenerateRandomColor";
             this.generateRandomColorToolStripMenuItem.Click += new System.EventHandler(this.generateRandomColorToolStripMenuItem_Click);
             // 
@@ -261,21 +262,21 @@
             this.helpToolStripMenuItem1,
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // helpToolStripMenuItem1
             // 
             this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
             this.helpToolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(132, 22);
             this.helpToolStripMenuItem1.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F12;
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 

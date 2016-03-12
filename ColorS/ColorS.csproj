@@ -126,6 +126,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="data\color_table_saved_UE4.xml" />
     <Content Include="data\dark to light.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
